@@ -61,10 +61,10 @@ getNewValue character counter polarity
         charIndex = (polarity (find character chars) 1)
 
 encrypt :: [Char] -> Int -> [Char]
-encrypt xs offset = [getNewValue x offset (+) | x <- xs] 
+encrypt xs offset = [getNewValue x offset (+) | x <- xs]
 
 decrypt :: [Char] -> Int -> [Char]
-decrypt xs offset = [getNewValue x offset (-) | x <- xs] 
+decrypt xs offset = [getNewValue x offset (-) | x <- xs]
 
 
 -- create datatype
