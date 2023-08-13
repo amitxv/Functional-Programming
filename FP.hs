@@ -66,7 +66,6 @@ encrypt xs offset = [getNewValue x offset (+) | x <- xs]
 decrypt :: [Char] -> Int -> [Char]
 decrypt xs offset = [getNewValue x offset (-) | x <- xs]
 
-
 -- create datatype
 data Outcome a b = Error a | Completion b deriving (Show)
 
