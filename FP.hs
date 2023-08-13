@@ -31,14 +31,6 @@ isPangram :: [Char] -> Bool
 -- create list of bools to check whether all of alphabet is in sentence, then check if that list of bools contains all True values
 isPangram sentence = all (==True) [elem x sentence | x <- ['a'..'z']]
 
-findHelper x xss index
-    | index == (length xss) = -1
-    | (xss !! index == x) = index
-    | otherwise = findHelper x xss (index + 1)
-
--- find :: a -> [a] -> b
-find x xss = findHelper x xss 0
-
 merge :: Ord a => [a] -> [a] -> [a]
 -- return current list if second list is empty
 merge xs [] = xs
