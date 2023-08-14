@@ -1,5 +1,7 @@
 module FP (triple, collatz, halve, isLeapYear, find, isPangram, merge, encrypt, decrypt, increaseStock, decreaseStock, Outcome(..)) where
 
+import Data.Char
+
 triple :: Num a => a -> a
 triple x = x * 3
 
@@ -29,7 +31,7 @@ find x xss = findHelper x xss 0
 
 isPangram :: [Char] -> Bool
 -- create list of bools to check whether all of alphabet is in sentence, then check if that list of bools contains all True values
-isPangram sentence = all (==True) [elem x sentence | x <- ['a'..'z']]
+isPangram sentence = all (==True) [elem x [toLower c | c <- sentence] | x <- ['a'..'z']]
 
 merge :: Ord a => [a] -> [a] -> [a]
 -- return current list if second list is empty
